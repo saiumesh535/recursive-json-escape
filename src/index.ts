@@ -15,6 +15,9 @@ function checkIfObject(input: Object): boolean {
 }
 
 function escapeCharacter(input: string): string {
+    if (typeof input !== 'string') {
+        return input;
+    }
     let result = input;
     for (const character of escapeCharacters) {
         switch (character as EscapeCharactersType) {

@@ -44,14 +44,28 @@ test('Check escape character for an Object', () => {
 });
 
 test('Check escape character for a nested object', () => {
-    const testObject = { name: "saiumesh's", data: {
-        name: "Rahul's",
-        place: "Hyderabad"
-    } };
-    const expectedObject = { name: "saiumesh''s", data: {
-        name: "Rahul''s",
-        place: "Hyderabad"
-    } };
+    const testObject = {
+        "name": "saiumesh's",
+        "data": {
+            "name": "Rahul's",
+            "one": 1,
+            "place": "Hyderabad",
+            "address": {
+                "name": "Umesh's"
+            }
+        }
+    };
+    const expectedObject = {
+        "name": "saiumesh''s",
+        "data": {
+            "name": "Rahul''s",
+            "one": 1,
+            "place": "Hyderabad",
+            "address": {
+                "name": "Umesh''s"
+            }
+        }
+    };
     const escaped = escapeObject(testObject);
     expect(escaped.result).toEqual(expectedObject);
 });
