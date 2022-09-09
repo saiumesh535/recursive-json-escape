@@ -2,7 +2,7 @@
 
 Adds escape characters in object recursively.
 
-```json
+```js
 
 const testObject = {
     "name": "saiumesh's",
